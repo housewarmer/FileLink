@@ -10,7 +10,23 @@
 		E593133722667971006B13D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593133622667971006B13D8 /* AppDelegate.swift */; };
 		E593133922667972006B13D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E593133822667972006B13D8 /* Assets.xcassets */; };
 		E593133C22667972006B13D8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E593133A22667972006B13D8 /* MainMenu.xib */; };
+		E593134522667A0D006B13D8 /* MMPathUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593134422667A0D006B13D8 /* MMPathUtility.swift */; };
+		E5B6931A2266905500A94ACA /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B693192266905500A94ACA /* Sparkle.framework */; };
+		E5B6931C2266909300A94ACA /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E5B693192266905500A94ACA /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E5B6931B2266907900A94ACA /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E5B6931C2266909300A94ACA /* Sparkle.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E593133322667971006B13D8 /* FileLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -19,6 +35,9 @@
 		E593133B22667972006B13D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E593133D22667972006B13D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E593133E22667972006B13D8 /* FileLink.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FileLink.entitlements; sourceTree = "<group>"; };
+		E593134422667A0D006B13D8 /* MMPathUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMPathUtility.swift; sourceTree = "<group>"; };
+		E593134622667B38006B13D8 /* PreferencesWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
+		E5B693192266905500A94ACA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +45,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5B6931A2266905500A94ACA /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A0FCB37B1E41CCFAB7EC148D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E5B693192266905500A94ACA /* Sparkle.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		E593132A22667971006B13D8 = {
 			isa = PBXGroup;
 			children = (
 				E593133522667971006B13D8 /* FileLink */,
 				E593133422667971006B13D8 /* Products */,
+				A0FCB37B1E41CCFAB7EC148D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,8 +81,10 @@
 			isa = PBXGroup;
 			children = (
 				E593133622667971006B13D8 /* AppDelegate.swift */,
+				E593134422667A0D006B13D8 /* MMPathUtility.swift */,
 				E593133822667972006B13D8 /* Assets.xcassets */,
 				E593133A22667972006B13D8 /* MainMenu.xib */,
+				E593134622667B38006B13D8 /* PreferencesWindow.xib */,
 				E593133D22667972006B13D8 /* Info.plist */,
 				E593133E22667972006B13D8 /* FileLink.entitlements */,
 			);
@@ -70,6 +101,7 @@
 				E593132F22667971006B13D8 /* Sources */,
 				E593133022667971006B13D8 /* Frameworks */,
 				E593133122667971006B13D8 /* Resources */,
+				E5B6931B2266907900A94ACA /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -131,6 +163,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E593133722667971006B13D8 /* AppDelegate.swift in Sources */,
+				E593134522667A0D006B13D8 /* MMPathUtility.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -268,16 +301,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FileLink/FileLink.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2R6EHR996B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FileLink/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.markleemcdonald.FileLink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -287,16 +327,23 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = FileLink/FileLink.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2R6EHR996B;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = FileLink/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.markleemcdonald.FileLink;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
