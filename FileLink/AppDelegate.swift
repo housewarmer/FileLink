@@ -17,7 +17,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NSApplication.shared.terminate(self)
     }
     
-    @IBAction func copyFileLinkAction(_ sender: Any) {
+    @IBAction func showPreferences(_ sender: Any) {
+        
+    }
+    @IBAction func copyFileLink(_ sender: Any) {
         
     }
     
@@ -40,6 +43,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func application(openFiles: String) {
         print(openFiles)
+    }
+    
+    func application(openFile: String) {
+        print(openFile)
     }
     
 }
