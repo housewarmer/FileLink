@@ -22,9 +22,6 @@
             <items>
                 <menuItem title="Check for Updates" id="jZT-lF-nmJ">
                     <modifierMask key="keyEquivalentModifierMask"/>
-                    <connections>
-                        <action selector="checkForUpdates:" target="VJa-dU-cZN" id="O9r-qX-sCM"/>
-                    </connections>
                 </menuItem>
                 <menuItem title="Preferences" id="v0A-xh-j5n">
                     <modifierMask key="keyEquivalentModifierMask"/>

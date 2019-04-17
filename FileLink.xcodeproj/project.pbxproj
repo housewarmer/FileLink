@@ -11,22 +11,7 @@
 		E593133922667972006B13D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E593133822667972006B13D8 /* Assets.xcassets */; };
 		E593133C22667972006B13D8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E593133A22667972006B13D8 /* MainMenu.xib */; };
 		E593134522667A0D006B13D8 /* MMPathUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593134422667A0D006B13D8 /* MMPathUtility.swift */; };
-		E5B6931A2266905500A94ACA /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B693192266905500A94ACA /* Sparkle.framework */; };
-		E5B6931C2266909300A94ACA /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = E5B693192266905500A94ACA /* Sparkle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		E5B6931B2266907900A94ACA /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				E5B6931C2266909300A94ACA /* Sparkle.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E593133322667971006B13D8 /* FileLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -45,7 +30,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E5B6931A2266905500A94ACA /* Sparkle.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,7 +85,6 @@
 				E593132F22667971006B13D8 /* Sources */,
 				E593133022667971006B13D8 /* Frameworks */,
 				E593133122667971006B13D8 /* Resources */,
-				E5B6931B2266907900A94ACA /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -124,6 +107,11 @@
 				TargetAttributes = {
 					E593133222667971006B13D8 = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.HardenedRuntime = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -305,6 +293,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2R6EHR996B;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -331,6 +320,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 2R6EHR996B;
+				ENABLE_HARDENED_RUNTIME = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
