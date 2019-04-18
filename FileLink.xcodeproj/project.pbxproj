@@ -11,6 +11,7 @@
 		E593133922667972006B13D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E593133822667972006B13D8 /* Assets.xcassets */; };
 		E593133C22667972006B13D8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E593133A22667972006B13D8 /* MainMenu.xib */; };
 		E593134522667A0D006B13D8 /* MMPathUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593134422667A0D006B13D8 /* MMPathUtility.swift */; };
+		E5B6933A2268F99900A94ACA /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B693392268F99900A94ACA /* PreferencesWindowController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		E593134422667A0D006B13D8 /* MMPathUtility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMPathUtility.swift; sourceTree = "<group>"; };
 		E593134622667B38006B13D8 /* PreferencesWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
 		E5B693192266905500A94ACA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
+		E5B693392268F99900A94ACA /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				E593133622667971006B13D8 /* AppDelegate.swift */,
+				E5B693392268F99900A94ACA /* PreferencesWindowController.swift */,
 				E593134422667A0D006B13D8 /* MMPathUtility.swift */,
 				E593133822667972006B13D8 /* Assets.xcassets */,
 				E593133A22667972006B13D8 /* MainMenu.xib */,
@@ -152,6 +155,7 @@
 			files = (
 				E593133722667971006B13D8 /* AppDelegate.swift in Sources */,
 				E593134522667A0D006B13D8 /* MMPathUtility.swift in Sources */,
+				E5B6933A2268F99900A94ACA /* PreferencesWindowController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
