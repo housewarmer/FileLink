@@ -50,6 +50,14 @@ class MMPathUtility: NSObject {
         else {return composedURLString!.addingPercentEncoding(withAllowedCharacters:.urlFragmentAllowed)!}
     }
     
+    func fullVolumeURLforPath(filePath: String) -> String? {
+        
+        let fileURL = URL(fileURLWithPath: filePath)
+        
+        return try? fullVolumeURLForPath(fileURL: fileURL)
+    }
+    
+    //Service method
     @objc func getRemoteURL(_ pboard: NSPasteboard, userData: String, error: NSErrorPointer) {
         let pboardItems = pboard.pasteboardItems
         var processedURLs: [String] = []
