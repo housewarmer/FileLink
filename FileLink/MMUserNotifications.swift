@@ -9,9 +9,10 @@
 import Foundation
 import UserNotifications
 
-class MMUserNotifications: NSObject {
+class MMUserNotifications: NSObject, UNUserNotificationCenterDelegate {
     let center = UNUserNotificationCenter.current()
-
+    
+    
     //Request Authorization
     func requestAuthorization() {
         center.requestAuthorization(options: [.alert], completionHandler:authorizationCompletionHandler)
@@ -30,6 +31,9 @@ class MMUserNotifications: NSObject {
         let content = UNMutableNotificationContent()
             content.title = title
             content.body = body
+            content.sound = UNNotificationSound.default
+            content.badge = NSNumber(value: numberOfItems)
+        
         
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 0.1, repeats: false)
         
@@ -37,9 +41,13 @@ class MMUserNotifications: NSObject {
         let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
         
         center.add(request) { (error) in
-            //print(error ?? "No error, cool.")
+            print(error ?? "No error, cool.")
         }
         
         
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
     }
 }

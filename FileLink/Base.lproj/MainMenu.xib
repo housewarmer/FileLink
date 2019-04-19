@@ -23,9 +23,16 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu id="4ZI-wM-qtY" userLabel="StatusMenu">
             <items>
+                <menuItem title="About FileLink" id="0dq-26-BRm">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="orderFrontStandardAboutPanel:" target="-1" id="vAa-Pa-Tmi"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Check for Updates" id="jZT-lF-nmJ">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
+                <menuItem isSeparatorItem="YES" id="YLk-eH-XRR"/>
                 <menuItem title="Preferences" id="v0A-xh-j5n">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -40,7 +47,7 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="-91" y="-1425"/>
+            <point key="canvasLocation" x="-91.5" y="-1435"/>
         </menu>
         <window title="FileLink Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="MuE-FP-dgl" userLabel="PreferencesWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
