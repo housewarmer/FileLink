@@ -59,6 +59,7 @@ class MMPathUtility: NSObject {
     
     //Service method
     @objc func getRemoteURL(_ pboard: NSPasteboard, userData: String, error: NSErrorPointer) {
+        let un = MMUserNotifications.init()
         let pboardItems = pboard.pasteboardItems
         var processedURLs: [String] = []
         
@@ -78,9 +79,12 @@ class MMPathUtility: NSObject {
                 processedURLs.append(processedURL!)
             }
         }
+        
         let urlStrings = processedURLs.joined(separator: "\n")
         NSPasteboard.general.clearContents()
         NSPasteboard.general.setString(urlStrings, forType: .string)
-        
+        let ni = pboardItems!.count
+        print(ni)
+        un.displayNotification(numberOfItems: ni)
     }
 }

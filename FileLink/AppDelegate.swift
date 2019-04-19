@@ -8,6 +8,7 @@
 
 import Cocoa
 
+
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     
@@ -86,6 +87,9 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         //apply the defaults
         _ = toggleDockIcon_Way2(showIcon: defaults.bool(forKey: "HideDockIcon"))
         
+        //Notifications
+        let un = MMUserNotifications.init()
+        un.requestAuthorization()
     }
     
     
@@ -93,10 +97,12 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         // Insert code here to tear down your application
     }
     
-    //Handle file open
+    //MARK: File Open Logic
     func application(_ sender: NSApplication, openFiles: [String]) {
+        
         let pu = MMPathUtility.init()
         let pb = NSPasteboard.general
+        let un = MMUserNotifications.init()
         
         var urls: [String] = []
         
@@ -108,6 +114,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         print(urlsString)
         pb.clearContents()
         pb.setString(urlsString, forType: .string)
+        
+        un.displayNotification(numberOfItems: openFiles.count)
     }
 }
 
