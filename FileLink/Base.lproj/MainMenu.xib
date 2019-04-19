@@ -30,13 +30,13 @@
                         <action selector="orderFrontStandardAboutPanel:" target="-1" id="vAa-Pa-Tmi"/>
                     </connections>
                 </menuItem>
+                <menuItem isSeparatorItem="YES" id="Rqi-4n-cQg"/>
                 <menuItem title="Check for Updates" id="jZT-lF-nmJ">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
                         <action selector="checkForUpdates:" target="7el-wU-gF3" id="mgz-FP-OLi"/>
                     </connections>
                 </menuItem>
-                <menuItem isSeparatorItem="YES" id="YLk-eH-XRR"/>
                 <menuItem title="Preferences" id="v0A-xh-j5n">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
