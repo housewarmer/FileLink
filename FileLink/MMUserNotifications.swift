@@ -18,8 +18,8 @@ class MMUserNotifications: NSObject {
     }
     
     func authorizationCompletionHandler(granted: Bool, error: Error?) -> Void {
-        print(String(format: "Notifications authorization granted? %@",  [granted]))
-        print(error ?? "No authorization error. Nice.")
+        //print(String(format: "Notifications authorization granted? %@",  [granted]))
+        //print(error ?? "No authorization error. Nice.")
     }
     
     func displayNotification(numberOfItems: Int) {
@@ -37,7 +37,7 @@ class MMUserNotifications: NSObject {
         let request = UNNotificationRequest(identifier: uuidString, content: content, trigger: trigger)
         
         center.add(request) { (error) in
-            print(error ?? "No error, cool.")
+            //print(error ?? "No error, cool.")
         }
         
         

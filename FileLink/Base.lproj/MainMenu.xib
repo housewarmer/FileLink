@@ -54,7 +54,7 @@
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
                     <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="8oo-Fz-SFF">
-                        <rect key="frame" x="11" y="70" width="442" height="4"/>
+                        <rect key="frame" x="10" y="70" width="442" height="4"/>
                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </box>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Gd-0a-S1y">
@@ -73,6 +73,9 @@
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="toggleNotificationOnService:" target="Voe-Tx-rLC" id="K8p-Kf-CFD"/>
+                        </connections>
                     </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yE9-66-aJA">
                         <rect key="frame" x="176" y="18" width="176" height="18"/>
@@ -81,6 +84,9 @@
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
+                        <connections>
+                            <action selector="toggleNotificationOnDrop:" target="Voe-Tx-rLC" id="heA-DS-6iJ"/>
+                        </connections>
                     </button>
                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="myU-gQ-K4g">
                         <rect key="frame" x="94" y="87" width="74" height="17"/>

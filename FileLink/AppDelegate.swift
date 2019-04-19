@@ -11,6 +11,10 @@ import Cocoa
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
+    var statusItem: NSStatusItem!
+    let defaults = UserDefaults.standard
+    
+    let ud = MMUserDefaults.init()
     
     //MARK: Outlets
     @IBOutlet var statusMenu: NSMenu!
@@ -23,11 +27,8 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     }
     
     @IBAction func showPreferences(_ sender: Any) {
-        //let pvc = PreferencesViewController(window: preferencesWindow)
         let preferencesWindowController = NSWindowController(window: preferencesWindow)
         preferencesWindowController.showWindow(self)
-        
-        let defaults = UserDefaults.standard
         
         switch defaults.bool(forKey: "HideDockIcon") {
             case false:
@@ -39,8 +40,6 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
     }
     
     @IBAction func toggleDockIconDefault(_ sender: NSButton) {
-        let defaults = UserDefaults.standard
-        
         var showIconBool: Bool
         
         switch sender.state {
@@ -53,18 +52,32 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         }
         
         defaults.set(showIconBool, forKey: "HideDockIcon")
-        //_ = toggleDockIcon_Way2(showIcon: showIconBool)
+    }
     
+    @IBAction func toggleNotificationOnService(_ sender: NSButton) {
+        switch sender.state {
+        case .on:
+            defaults.set(true, forKey: "NotificationOnService")
+        case .off:
+             defaults.set(false, forKey: "NotificationOnService")
+        default:
+             defaults.set(true, forKey: "NotificationOnService")
+        }
+    }
+    
+    @IBAction func toggleNotificationOnDrop(_ sender: NSButton) {
+        switch sender.state {
+        case .on:
+            defaults.set(true, forKey: "NotificationOnDrag")
+        case .off:
+            defaults.set(false, forKey: "NotificationOnDrag")
+        default:
+            defaults.set(true, forKey: "NotificationOnDrag")
+        }
     }
     
     
-//    @IBAction func copyFileLink(_ sender: Any) {
-//
-//    }
-    
     //MARK: Initialization
-    var statusItem: NSStatusItem!
-    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
         
@@ -76,15 +89,10 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
         statusItem.button?.image = icon
         NSRegisterServicesProvider(MMPathUtility(), NSServiceProviderName("FileLink"))
         
-        //Set Initial Defaults
-        let defaults = UserDefaults.standard
+        //Set Initial Defaults, if needed
+        ud.initializeDefaults()
         
-        if defaults.object(forKey: "HideDockIcon") == nil {
-            defaults.set(false, forKey: "HideDockIcon")
-            print("created the key")
-        }
-        
-        //apply the defaults
+        //apply the default dock icon state
         _ = toggleDockIcon_Way2(showIcon: defaults.bool(forKey: "HideDockIcon"))
         
         //Notifications
@@ -111,17 +119,15 @@ class AppDelegate: NSObject, NSApplicationDelegate, NSWindowDelegate {
             urls.append(url)
         }
         let urlsString = urls.joined(separator: "\n")
-        print(urlsString)
         pb.clearContents()
         pb.setString(urlsString, forType: .string)
         
-        un.displayNotification(numberOfItems: openFiles.count)
+        if defaults.bool(forKey: "NotificationOnDrag") { un.displayNotification(numberOfItems: openFiles.count) }
     }
 }
 
 //MARK: Refactor to class
 func toggleDockIcon_Way2(showIcon state: Bool) -> Bool {
-    print(state)
     var result: Bool
     if state {
         result = NSApp.setActivationPolicy(NSApplication.ActivationPolicy.regular)

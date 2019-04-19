@@ -85,6 +85,6 @@ class MMPathUtility: NSObject {
         NSPasteboard.general.setString(urlStrings, forType: .string)
         let ni = pboardItems!.count
         print(ni)
-        un.displayNotification(numberOfItems: ni)
+        if UserDefaults.standard.bool(forKey: "NotificationOnService") { un.displayNotification(numberOfItems: ni) }
     }
 }
