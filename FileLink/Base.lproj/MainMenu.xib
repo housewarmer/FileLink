@@ -23,9 +23,16 @@
         <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
         <menu id="4ZI-wM-qtY" userLabel="StatusMenu">
             <items>
+                <menuItem title="About FileLink" id="0dq-26-BRm">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="orderFrontStandardAboutPanel:" target="-1" id="vAa-Pa-Tmi"/>
+                    </connections>
+                </menuItem>
                 <menuItem title="Check for Updates" id="jZT-lF-nmJ">
                     <modifierMask key="keyEquivalentModifierMask"/>
                 </menuItem>
+                <menuItem isSeparatorItem="YES" id="YLk-eH-XRR"/>
                 <menuItem title="Preferences" id="v0A-xh-j5n">
                     <modifierMask key="keyEquivalentModifierMask"/>
                     <connections>
@@ -40,22 +47,67 @@
                     </connections>
                 </menuItem>
             </items>
-            <point key="canvasLocation" x="-91" y="-1425"/>
+            <point key="canvasLocation" x="-91.5" y="-1435"/>
         </menu>
         <window title="FileLink Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="MuE-FP-dgl" userLabel="PreferencesWindow">
             <windowStyleMask key="styleMask" titled="YES" closable="YES" resizable="YES"/>
-            <rect key="contentRect" x="948" y="240" width="401" height="54"/>
+            <rect key="contentRect" x="948" y="240" width="465" height="123"/>
             <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1417"/>
-            <value key="minSize" type="size" width="650" height="330"/>
-            <value key="maxSize" type="size" width="650" height="3000"/>
+            <value key="minSize" type="size" width="465" height="240"/>
+            <value key="maxSize" type="size" width="465" height="123"/>
+            <value key="minFullScreenContentSize" type="size" width="465" height="123"/>
             <view key="contentView" wantsLayer="YES" id="ZOr-xM-fg2" userLabel="Main">
-                <rect key="frame" x="0.0" y="0.0" width="401" height="54"/>
+                <rect key="frame" x="0.0" y="0.0" width="465" height="123"/>
                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 <subviews>
-                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dhp-TJ-60g">
-                        <rect key="frame" x="140" y="18" width="120" height="18"/>
+                    <box verticalHuggingPriority="750" fixedFrame="YES" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="8oo-Fz-SFF">
+                        <rect key="frame" x="10" y="70" width="442" height="4"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </box>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Gd-0a-S1y">
+                        <rect key="frame" x="86" y="39" width="81" height="17"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <buttonCell key="cell" type="check" title="Hide Dock Icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dTD-X7-Fee">
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Notifications" id="9gr-4Y-7Mh">
+                            <font key="font" usesAppearanceFont="YES"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kpN-iQ-ckE">
+                        <rect key="frame" x="176" y="39" width="188" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Display when Service is run" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="7aV-pu-83t">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="toggleNotificationOnService:" target="Voe-Tx-rLC" id="K8p-Kf-CFD"/>
+                        </connections>
+                    </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yE9-66-aJA">
+                        <rect key="frame" x="176" y="18" width="176" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Display for drag and drop" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="9x5-39-EGF">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="toggleNotificationOnDrop:" target="Voe-Tx-rLC" id="heA-DS-6iJ"/>
+                        </connections>
+                    </button>
+                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="myU-gQ-K4g">
+                        <rect key="frame" x="94" y="87" width="74" height="17"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMinY="YES"/>
+                        <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="App mode: " id="Kdh-Ri-D9Z">
+                            <font key="font" usesAppearanceFont="YES"/>
+                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                            <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                        </textFieldCell>
+                    </textField>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dhp-TJ-60g">
+                        <rect key="frame" x="172" y="87" width="120" height="18"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="check" title="Hide Dock icon" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="dTD-X7-Fee">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
@@ -68,7 +120,7 @@
             <connections>
                 <outlet property="delegate" destination="22k-Ax-OF6" id="zmj-NH-dx2"/>
             </connections>
-            <point key="canvasLocation" x="-166.5" y="-1258"/>
+            <point key="canvasLocation" x="-134.5" y="-1223.5"/>
         </window>
         <menu title="Main Menu" systemMenu="main" id="fw6-In-Ecr">
             <items>

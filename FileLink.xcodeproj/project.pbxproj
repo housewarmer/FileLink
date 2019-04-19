@@ -12,6 +12,9 @@
 		E593133C22667972006B13D8 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E593133A22667972006B13D8 /* MainMenu.xib */; };
 		E593134522667A0D006B13D8 /* MMPathUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = E593134422667A0D006B13D8 /* MMPathUtility.swift */; };
 		E5B6933A2268F99900A94ACA /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B693392268F99900A94ACA /* PreferencesWindowController.swift */; };
+		E5B6933C226A277A00A94ACA /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5B6933B226A277A00A94ACA /* UserNotifications.framework */; };
+		E5B6933E226A28C600A94ACA /* MMUserNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B6933D226A28C600A94ACA /* MMUserNotifications.swift */; };
+		E5B69340226A3A3500A94ACA /* MMUserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5B6933F226A3A3500A94ACA /* MMUserDefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +28,9 @@
 		E593134622667B38006B13D8 /* PreferencesWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferencesWindow.xib; sourceTree = "<group>"; };
 		E5B693192266905500A94ACA /* Sparkle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Sparkle.framework; sourceTree = "<group>"; };
 		E5B693392268F99900A94ACA /* PreferencesWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
+		E5B6933B226A277A00A94ACA /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		E5B6933D226A28C600A94ACA /* MMUserNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMUserNotifications.swift; sourceTree = "<group>"; };
+		E5B6933F226A3A3500A94ACA /* MMUserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMUserDefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +38,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E5B6933C226A277A00A94ACA /* UserNotifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +48,7 @@
 		A0FCB37B1E41CCFAB7EC148D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E5B6933B226A277A00A94ACA /* UserNotifications.framework */,
 				E5B693192266905500A94ACA /* Sparkle.framework */,
 			);
 			name = Frameworks;
@@ -67,6 +75,8 @@
 			isa = PBXGroup;
 			children = (
 				E593133622667971006B13D8 /* AppDelegate.swift */,
+				E5B6933F226A3A3500A94ACA /* MMUserDefaults.swift */,
+				E5B6933D226A28C600A94ACA /* MMUserNotifications.swift */,
 				E5B693392268F99900A94ACA /* PreferencesWindowController.swift */,
 				E593134422667A0D006B13D8 /* MMPathUtility.swift */,
 				E593133822667972006B13D8 /* Assets.xcassets */,
@@ -156,6 +166,8 @@
 				E593133722667971006B13D8 /* AppDelegate.swift in Sources */,
 				E593134522667A0D006B13D8 /* MMPathUtility.swift in Sources */,
 				E5B6933A2268F99900A94ACA /* PreferencesWindowController.swift in Sources */,
+				E5B6933E226A28C600A94ACA /* MMUserNotifications.swift in Sources */,
+				E5B69340226A3A3500A94ACA /* MMUserDefaults.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
