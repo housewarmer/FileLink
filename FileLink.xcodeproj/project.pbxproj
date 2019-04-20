@@ -111,6 +111,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E593134122667972006B13D8 /* Build configuration list for PBXNativeTarget "FileLink" */;
 			buildPhases = (
+				E582944F226A9A1A003A2756 /* ShellScript */,
 				E593132F22667971006B13D8 /* Sources */,
 				E593133022667971006B13D8 /* Frameworks */,
 				E593133122667971006B13D8 /* Resources */,
@@ -177,6 +178,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E582944F226A9A1A003A2756 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E593132F22667971006B13D8 /* Sources */ = {
