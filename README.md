@@ -4,7 +4,7 @@ A very simple utility to copy file URLs from remote and local volumes. FileLink 
 as a status bar item.
 
 ## Instructions
-FileLink provides a service, _Copy File Link_ that is available for any Finder item, you can also drage finder items to the app icon. 
+FileLink provides a service, _Copy File Link_ that is available for any Finder item, you can also drag finder items to the app icon to copy their URLs to the clipboard.
 
 ## License
 MIT License
